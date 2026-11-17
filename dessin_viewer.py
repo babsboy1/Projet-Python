@@ -100,12 +100,12 @@ class DrawingCanvas(QtWidgets.QWidget):
         point = (float(x), float(y))
 
         if self.last_point is None:
-            ...
+            self.process.add_point(point)
 
         else:
-            ...
+            self.process.add_segment(self.last_point, point)
 
-        self.last_point = ...
+        self.last_point = point
 
         self.update()
         self.changed.emit()
